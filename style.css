@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'century',sans-serif,'roboto';
+    color: white;
+}
+
+/*navbar*/
+#navbar{
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+    flex-wrap: wrap;
+    background-color: rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+}
+.logo{
+    margin: 5px;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5px;
+}
+.logo span{
+    color: orange;
+}
+#navbar ul{
+    display: flex;
+    list-style:none;
+    margin: 20px 0px;
+}
+#navbar ul li{
+    font-size: 20px;
+    font-weight: bold;
+    list-style-type: none;
+}
+#navbar ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    transition: all .5s ease;
+}
+#navbar ul li a:hover{
+    background-color: white;
+    color: orange;
+    box-shadow: 0 0 5px white;
+}
+
+/*Home Section*/
+#home{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0,0,0,0.9);
+    height: 700PX;
+    color: white;
+}
+.main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.pic{
+    display: flex;
+    height: auto;
+    width: 400px;
+}
+.home-text{
+    display: inline-block;
+    flex-wrap: wrap;
+    width: 400px;
+}
+.home-text h1{
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.home-text h3{
+    font-size:45px;
+    font-weight:bold;
+    letter-spacing: 2px;
+    color: orange;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.home-text p{
+    font-size: 30px;  
+    letter-spacing: 2px;  
+}
+.home-text button{
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.home-text button:hover{
+color: orange;
+}
+
+/*About me section*/
+#about{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+}
+.hero{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#about img{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 300px;
+    margin: 20px;
+}
+.about-text{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    margin: 10px;
+}
+.about-text h5{
+    color:orange;
+    letter-spacing: 2px;
+    font-size: 25px;
+    margin: 25px 0px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.about-text p{
+    color: white;
+    letter-spacing: 2px;
+    line-height: 28px;
+    font-size: 20px;
+    margin-bottom: 45px;
+    text-align: justify;
+}
+.about-text p span{
+    color: orange;
+    font-weight: bold;
+}
+
+/* Portfolio section */
+#portfolio{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+}
+.gallary{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+.gallary img{
+    width: 400px;
+    height: 240px;
+    margin:10px
+}
+.gallary h1{
+    text-align: center;
+    color: orange;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*Conatct */
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+}
+#contact h2{
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+}
+.icon{
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.icon i{
+    font-size: 50px;
+    margin: 20px;
+    padding: 20px;
+}
+.icon i:hover{
+    color: orange;
+}
+

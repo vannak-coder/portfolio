@@ -1,0 +1,94 @@
+/*navbar*/
+.logo{
+    font-size: 15px;
+}
+#navbar ul {
+    margin: 10px 0;
+}
+#navbar ul li{
+    font-size: 10px;
+}
+#navbar ul li a{
+    padding: 5px 10px;
+}
+/*Home*/
+#home{
+    height: 400px;
+    width: 100%;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.heading{
+    font-size: 20px;
+}
+.pic{
+    width: 300x;
+    height: auto;
+}
+.home-text h1{
+    font-size: 10px;
+}
+.home-text h3{
+    font-size: 15px;
+}
+.home-text p{
+    font-size: 10px;
+}
+.main button{
+    font-size: 10px;
+}
+/*About ME*/
+#about{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#about img{
+    width: 150px;
+    height:auto;
+}
+.about-text{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 15px;
+    margin: 15px;
+}
+.about-text h5{
+    font-size: 15px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+.about-text p{
+    font-size: 10px;
+    line-height: 15px;
+    text-align: justify;
+    margin: 5px;
+}
+
+/*Portfolio*/
+.gallary img{
+    width: 250px;
+    height: auto;
+}
+.gallary h1{
+    font-size: 15px;
+}
+
+/*Contact*/
+#contact{
+    width: 100%;
+    display: flex;
+}
+#contact h2{
+    font-size: 15px;
+    margin: 10px;
+}
+.icon i{
+    margin: 5px;
+    font-size: 30px;
+}
