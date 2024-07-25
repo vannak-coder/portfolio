@@ -191,37 +191,6 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
-.gallary .item {
-    width: 300px;
-    margin: 20px 10px;
-    overflow: hidden;
-    position: relative;
-}
-
-.gallary img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.gallary h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.gallary img:hover {
-    transform: scale(1.1);
-}
-
 /* Contact Section */
 #contact {
     display: flex;
