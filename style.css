@@ -186,10 +186,28 @@ body {
     padding: 50px 20px;
 }
 
-.gallary {
+.gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 20px;
+}
+
+.item {
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 1.2em;
 }
 /* Contact Section */
 #contact {
