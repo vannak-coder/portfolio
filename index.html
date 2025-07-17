@@ -2,99 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="This is my official portfolio">
-    <meta name="author" content="Vannak">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" media="screen and (max-width:800px)" href="tablet.css">
-    <link rel="stylesheet" media="screen and (max-width:530px)" href="phone.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <title>Vannak's Portfolio - Cyber & Web Development</title>
+
+    <meta name="description" content="Vannak's official portfolio showcasing interests in cybersecurity (pentesting) and skills in web technologies like HTML, CSS, JavaScript, Java, and Linux.">
+    <meta name="author" content="Vannak">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="cool-style.css"> <!-- Add a new CSS file for cool styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzpUVSN7v+P8M0S3j4VvVv02/dFq5xU+mU0vJ7r9Z7yY+lCg6R9zLgq2oK6pB3b2V9sY3Q7W7uP9xU1F5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <script src="https://drive.google.com/file/d/1UbYxXgfPiiLQK-SsaAMuJOygvB_AgBzp/view?usp=sharing" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <div class="container-fluid">
-        <div id="navbar">
-            <h2 class="logo">PORTFO<span>LIO</span></h2>
-            <ul>
-                <li><a href="#home">Home</a></li>
+    <header class="container-fluid">
+        <nav id="navbar">
+            <h1 class="logo">PORTFO<span>LIO</span></h1>
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links"> <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
-            </ul>  
-        </div>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- Home section -->
-        <section id="home">
-            <div class="main">
-                <img src="my pic 1.png" class="pic" alt="...">
+    <main class="container-fluid">
+        <section id="home" class="hero-section"> <div class="home-content">
+                <img src="my pic 1.png" class="pic" alt="Vannak's profile picture, a young man smiling at the camera.">
                 <div class="home-text">
-                    <h1>Hey there you found me</h1>
-                    <h3>glad to see you here</h3>
-                    <br>
+                    <h2>Hey there, you found me!</h2> <h3>Glad to see you here</h3>
                     <a href="https://drive.google.com/file/d/1BOqdiYV3eulouTL4LWc0PDp5UO86ASwD/view?usp=sharing" target="_blank" class="btn btn-outline-dark">Download CV</a>
                 </div>
             </div>
         </section>
 
-        <!-- About Me -->
-        <section id="about">
-            <h1 class="heading">About me</h1>
-            <div class="hero">
-                <img src="my pic.jpg">
+        <section id="about" class="about-section">
+            <h2 class="section-heading">About me</h2> <div class="about-content">
+                <img src="my pic.jpg" alt="Vannak's profile picture, a professional headshot.">
                 <div class="about-text">
-                    <h5>Interest in Cyber Field</h5>
-                    <p>I dream of becoming a pentester. Why? Because I chose this field out of genuine passion—I love it and truly enjoy the journey. Although it's a long road, I believe there are no shortcuts to being unique.</p>
+                    <h3>Interest in Cyber Field</h3> <p>I dream of becoming a pentester. Why? Because I chose this field out of genuine passion—I love it and truly enjoy the journey. Although it's a long road, I believe there are no shortcuts to being unique.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio -->
-        <section id="portfolio">
-            <h1 class="heading">Portfolio</h1>
-            <div class="gallery">
+        <section id="portfolio" class="portfolio-section">
+            <h2 class="section-heading">Portfolio</h2> <div class="gallery">
                 <div class="item">
-                    <h1>HTML</h1>
-                    <img src="Html.jpg" alt="HTML LOGO">
+                    <h3>HTML</h3> <img src="Html.jpg" alt="HTML 5 logo">
                 </div>
                 <div class="item">
-                    <h1>CSS</h1>
-                    <img src="css.png" alt="CSS LOGO">
+                    <h3>CSS</h3> <img src="css.png" alt="CSS 3 logo">
                 </div>
                 <div class="item">
-                    <h1>JavaScript</h1>
-                    <img src="js.png" alt="JAVASCRIPT LOGO">
+                    <h3>JavaScript</h3> <img src="js.png" alt="JavaScript logo">
                 </div>
                 <div class="item">
-                    <h1>JAVA</h1>
-                    <img src="java.jpg" alt="JAVA LOGO">
+                    <h3>JAVA</h3> <img src="java.jpg" alt="Java programming language logo">
                 </div>
                 <div class="item">
-                    <h1>Linux</h1>
-                    <img src="linux.jpg" alt="LINUX LOGO">
+                    <h3>Linux</h3> <img src="linux.jpg" alt="Linux Tux penguin mascot logo">
                 </div>
                 <div class="item">
-                    <h1>BootStrap</h1>
-                    <img src="bs.png" alt="BOOTSTRAP">
+                    <h3>Bootstrap</h3> <img src="bs.png" alt="Bootstrap framework logo">
                 </div>
             </div>
         </section>
 
-        <!-- Contacts -->
-        <section id="contact">
-            <h1 class="heading">Contact</h1>
-            <h2>Would love to hear back from you.</h2>
-            <div class="social">
-                <div class="icon">
-                    <a href="https://drive.google.com/file/d/1VnERrQExMxAoPcrglr7fAe9wQGR7OfS6/view?usp=sharing" target="_blank" title="This is my official PhoneNumber."><i class="fa-solid fa-phone"></i></a>
-                    <a href="https://t.me/Knak515" target="_blank" title="This is my official telegram."><i class="fab fa-telegram"></i></a>
-                    <a href="https://www.linkedin.com/in/vong-vannak-515467269/" target="_blank" title="This is my official Linkdn."><i class="fa-brands fa-linkedin"></i></a>
-                </div>
+        <section id="contact" class="contact-section">
+            <h2 class="section-heading">Contact</h2> <h3>Would love to hear back from you.</h3> <div class="social-icons"> <a href="https://drive.google.com/file/d/1VnERrQExMxAoPcrglr7fAe9wQGR7OfS6/view?usp=sharing" target="_blank" title="My official Phone Number on Google Drive."><i class="fa-solid fa-phone"></i></a>
+                <a href="https://t.me/Knak515" target="_blank" title="My official Telegram profile."><i class="fab fa-telegram"></i></a>
+                <a href="https://www.linkedin.com/in/vong-vannak-515467269/" target="_blank" title="My official LinkedIn profile."><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </section>
-    </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Vannak. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
