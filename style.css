@@ -1,5 +1,16 @@
 /* --- Global Styles & Resets --- */
-/* ... (existing global styles like @import, *, html, body) ... */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 /* CSS Variables for Theme */
 :root { /* Default Light Theme Variables */
@@ -16,7 +27,7 @@
     --border-color: #eee;
     --shadow-color: rgba(0,0,0,0.1);
 
-    /* Transition for smooth theme change */
+    /* Smooth transition for theme change */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -38,63 +49,193 @@ body.dark-theme { /* Dark Theme Variables */
 /* Apply variables throughout your CSS */
 body {
     line-height: 1.6;
-    background-color: var(--background-color-primary); /* Use variable */
-    color: var(--text-color-primary); /* Use variable */
+    background-color: var(--background-color-primary);
+    color: var(--text-color-primary);
 }
 
-/* Example: Update your existing styles to use these variables */
-#navbar {
-    background-color: var(--background-color-secondary); /* Use variable */
-    box-shadow: 0 4px 6px var(--shadow-color); /* Use variable */
+.container-fluid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.logo {
-    color: var(--text-color-heading); /* Use variable */
-}
-
-.logo span {
-    color: var(--accent-color); /* Use variable */
-}
-
-#navbar .nav-links li a {
-    color: var(--text-color-secondary); /* Use variable */
-}
-
-#navbar .nav-links li a:hover {
-    color: var(--accent-color); /* Use variable */
-}
-
+/* Common Section Heading Style */
 .section-heading {
-    color: var(--text-color-heading); /* Use variable */
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--text-color-heading);
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 0.5rem;
 }
 
 .section-heading::after {
-    background-color: var(--accent-color); /* Use variable */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
 }
 
+
+/* --- Navbar Styling --- */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: var(--background-color-secondary);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--navbar-height, 80px);
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--text-color-heading);
+    font-weight: 700;
+    margin: 0;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+/* Navigation links container */
+#navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display horizontally by default */
+}
+
+#navbar .nav-links li {
+    margin-left: 2rem;
+}
+
+#navbar .nav-links li a {
+    text-decoration: none;
+    color: var(--text-color-secondary);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#navbar .nav-links li a:hover {
+    color: var(--accent-color);
+}
+
+/* Navigation Controls Wrapper (for theme toggle and hamburger) */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Theme toggle button specific styles */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-primary);
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 0.5rem;
+}
+
+#theme-toggle:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Hide/show sun/moon icons based on theme */
+body.dark-theme #theme-toggle .fas.fa-moon {
+    display: none; /* Hide moon when dark theme is active */
+}
+body:not(.dark-theme) #theme-toggle .fas.fa-sun {
+    display: none; /* Hide sun when light theme is active */
+}
+#theme-toggle .fas.fa-sun {
+    color: #f39c12; /* Sun icon color (can be a fixed color regardless of theme) */
+}
+
+
+/* Hamburger menu button (hidden by default on large screens) */
+.nav-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: var(--text-color-primary);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+
+/* --- Home Section --- */
 #home {
-    background-color: var(--background-color-accent); /* Use variable */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color-accent);
+    padding: 4rem 0;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .home-content .pic {
-    border: 5px solid var(--background-color-secondary); /* Use variable */
-    box-shadow: 0 8px 15px var(--shadow-color); /* Use variable */
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--background-color-secondary);
+    box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.home-text {
+    max-width: 600px;
 }
 
 .home-text h2 {
-    color: var(--text-color-heading); /* Use variable */
+    font-size: 3.5rem;
+    color: var(--text-color-heading);
+    margin-bottom: 0.5rem;
 }
 
 .home-text h3 {
-    color: var(--text-color-secondary); /* Use variable */
+    font-size: 1.8rem;
+    color: var(--text-color-secondary);
+    margin-bottom: 1.5rem;
 }
 
-.home-text .btn-outline-dark { /* Adjust Bootstrap's button for dark mode */
+/* Specific button styling for light/dark mode */
+.home-text .btn-outline-dark {
     border-color: var(--text-color-primary);
     color: var(--text-color-primary);
     transition: all 0.3s ease;
 }
 
+.home-text .btn-outline-dark:hover {
+    background-color: var(--text-color-primary);
+    color: var(--background-color-primary); /* Text color changes on hover */
+}
+
+/* Dark theme specific button styling */
 body.dark-theme .home-text .btn-outline-dark {
     border-color: var(--accent-color);
     color: var(--accent-color);
@@ -106,116 +247,277 @@ body.dark-theme .home-text .btn-outline-dark:hover {
 }
 
 
-/* ... continue replacing direct color values with variables for all sections ... */
-
+/* --- About Section --- */
 #about {
+    padding: 6rem 0;
     background-color: var(--background-color-secondary);
 }
 
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
 #about img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
     box-shadow: 0 8px 15px var(--shadow-color);
 }
 
+.about-text {
+    max-width: 600px;
+}
+
 .about-text h3 {
+    font-size: 2rem;
     color: var(--text-color-heading);
+    margin-bottom: 1rem;
 }
 
 .about-text p {
+    font-size: 1.1rem;
     color: var(--text-color-secondary);
+    line-height: 1.7;
 }
 
+
+/* --- Portfolio Section --- */
 #portfolio {
+    padding: 6rem 0;
     background-color: var(--background-color-accent);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .gallery .item {
     background-color: var(--background-color-secondary);
+    border-radius: 10px;
     box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery .item:hover {
+    transform: translateY(-5px);
     box-shadow: 0 8px 16px var(--shadow-color);
 }
 
 .gallery .item h3 {
+    font-size: 1.8rem;
     color: var(--text-color-heading);
+    margin-bottom: 1rem;
 }
 
+.gallery .item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+
+/* --- Contact Section --- */
 #contact {
+    padding: 6rem 0;
     background-color: var(--background-color-primary);
+    text-align: center;
 }
 
 #contact h3 {
+    font-size: 1.8rem;
     color: var(--text-color-secondary);
+    margin-bottom: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
 }
 
 .social-icons a {
     color: var(--accent-color);
+    font-size: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
     color: var(--accent-color-hover);
+    transform: translateY(-5px);
 }
 
+
+/* --- Footer Styling --- */
 .site-footer {
-    background-color: var(--text-color-heading); /* Often a dark color for footer */
-    color: var(--text-color-primary); /* Light text on dark background */
+    background-color: var(--text-color-heading);
+    color: var(--text-color-primary);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
 }
-
-/* Theme toggle button specific styles */
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-color-primary); /* Default icon color */
-    transition: color 0.3s ease, transform 0.2s ease;
-    padding: 0.5rem; /* Add padding for easier clicking */
-    margin-right: 1rem; /* Space from other controls */
-}
-
-#theme-toggle:hover {
-    color: var(--accent-color);
-    transform: scale(1.1);
-}
-
-/* Adjust icon based on theme */
-body.dark-theme #theme-toggle .fas.fa-moon {
-    display: none; /* Hide moon when dark theme is active */
-}
-body:not(.dark-theme) #theme-toggle .fas.fa-sun {
-    display: none; /* Hide sun when light theme is active */
-}
-#theme-toggle .fas.fa-sun {
-    color: #f39c12; /* Sun icon color */
-}
-
-
-/* Adjust .nav-controls for positioning theme toggle and hamburger */
-.nav-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* Space between buttons */
-}
-
 
 /* --- Media Queries for Responsiveness --- */
-/* ... (existing media queries. Adjust colors inside them too if specific elements are styled differently) ... */
 
+/* Tablet styles (max-width: 800px) */
 @media screen and (max-width: 800px) {
-    /* ... (existing navbar adjustments) ... */
+    .container-fluid {
+        padding: 0 10px;
+    }
 
+    #navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 1rem;
+        justify-content: space-between; /* Maintain space between logo and controls */
+    }
+
+    #navbar .logo {
+        font-size: 1.6rem;
+    }
+
+    /* Hide nav links by default, show toggle button */
     #navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
         background-color: var(--background-color-secondary); /* Ensure dropdown background changes */
-        border-top-color: var(--border-color); /* Use variable for border */
-        box-shadow: 0 4px 6px var(--shadow-color); /* Use variable for shadow */
+        position: absolute;
+        top: var(--navbar-height, 80px); /* Adjust top based on potential navbar height change */
+        left: 0;
+        box-shadow: 0 4px 6px var(--shadow-color);
+        padding: 1rem 0;
+        border-top: 1px solid var(--border-color);
+    }
+
+    #navbar .nav-links.active {
+        display: flex; /* Show the menu when 'active' class is present */
+    }
+
+    #navbar .nav-links li {
+        margin: 0;
+        text-align: center;
     }
 
     #navbar .nav-links li a {
-        color: var(--text-color-primary); /* Ensure links are visible */
+        display: block;
+        padding: 10px 0;
+        color: var(--text-color-primary); /* Adjust link color for dropdown */
     }
 
+    /* Show hamburger toggle and theme toggle */
     .nav-toggle {
-        color: var(--text-color-primary); /* Match icon color */
+        display: block;
+        color: var(--text-color-primary);
+    }
+    #theme-toggle {
+        display: block;
+    }
+
+
+    /* Section headings */
+    .section-heading {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Home and About content layout */
+    .home-content,
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .home-text h2 {
+        font-size: 2.8rem;
+    }
+
+    .home-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.6rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    /* Portfolio gallery */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Social icons */
+    .social-icons {
+        gap: 1.5rem;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+    }
+}
+
+/* Phone styles (max-width: 530px) */
+@media screen and (max-width: 530px) {
+    #navbar {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .section-heading {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .home-content .pic,
+    #about img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .home-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .home-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+        padding: 0 1rem;
+    }
+
+    .gallery .item h3 {
+        font-size: 1.5rem;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 1.8rem;
     }
 }
