@@ -27,8 +27,8 @@ html {
     --border-color: #eee;
     --shadow-color: rgba(0,0,0,0.1);
 
-    /* Smooth transition for theme change */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition for theme change on all affected properties */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 body.dark-theme { /* Dark Theme Variables */
@@ -155,13 +155,18 @@ body {
 }
 
 /* Hide/show sun/moon icons based on theme */
+#theme-toggle .fas.fa-moon {
+    display: inline-block; /* Moon visible by default (light mode) */
+}
+#theme-toggle .fas.fa-sun {
+    display: none; /* Sun hidden by default */
+}
+
 body.dark-theme #theme-toggle .fas.fa-moon {
     display: none; /* Hide moon when dark theme is active */
 }
-body:not(.dark-theme) #theme-toggle .fas.fa-sun {
-    display: none; /* Hide sun when light theme is active */
-}
-#theme-toggle .fas.fa-sun {
+body.dark-theme #theme-toggle .fas.fa-sun {
+    display: inline-block; /* Show sun when dark theme is active */
     color: #f39c12; /* Sun icon color (can be a fixed color regardless of theme) */
 }
 
@@ -261,6 +266,7 @@ body.dark-theme .home-text .btn-outline-dark:hover {
     gap: 3rem;
     flex-wrap: wrap;
     text-align: center;
+    color: var(--text-color-primary); /* Ensure all content respects theme */
 }
 
 #about img {
@@ -336,6 +342,7 @@ body.dark-theme .home-text .btn-outline-dark:hover {
     padding: 6rem 0;
     background-color: var(--background-color-primary);
     text-align: center;
+    color: var(--text-color-primary); /* Ensure all content respects theme */
 }
 
 #contact h3 {
@@ -364,8 +371,8 @@ body.dark-theme .home-text .btn-outline-dark:hover {
 
 /* --- Footer Styling --- */
 .site-footer {
-    background-color: var(--text-color-heading);
-    color: var(--text-color-primary);
+    background-color: var(--text-color-heading); /* Often a dark color for footer */
+    color: var(--text-color-primary); /* Light text on dark background */
     text-align: center;
     padding: 2rem 0;
     font-size: 0.9rem;
@@ -379,11 +386,12 @@ body.dark-theme .home-text .btn-outline-dark:hover {
         padding: 0 10px;
     }
 
+    /* Navbar adjustments */
     #navbar {
         flex-wrap: wrap;
         height: auto;
         padding: 1rem;
-        justify-content: space-between; /* Maintain space between logo and controls */
+        justify-content: space-between;
     }
 
     #navbar .logo {
@@ -395,9 +403,9 @@ body.dark-theme .home-text .btn-outline-dark:hover {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: var(--background-color-secondary); /* Ensure dropdown background changes */
+        background-color: var(--background-color-secondary);
         position: absolute;
-        top: var(--navbar-height, 80px); /* Adjust top based on potential navbar height change */
+        top: var(--navbar-height, 80px);
         left: 0;
         box-shadow: 0 4px 6px var(--shadow-color);
         padding: 1rem 0;
@@ -405,7 +413,7 @@ body.dark-theme .home-text .btn-outline-dark:hover {
     }
 
     #navbar .nav-links.active {
-        display: flex; /* Show the menu when 'active' class is present */
+        display: flex;
     }
 
     #navbar .nav-links li {
@@ -416,7 +424,7 @@ body.dark-theme .home-text .btn-outline-dark:hover {
     #navbar .nav-links li a {
         display: block;
         padding: 10px 0;
-        color: var(--text-color-primary); /* Adjust link color for dropdown */
+        color: var(--text-color-primary);
     }
 
     /* Show hamburger toggle and theme toggle */
