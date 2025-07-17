@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Event listener for the theme toggle button
-if (themeToggleBtn) { // Check if button exists
+if (themeToggleBtn) { // Check if button exists before adding listener
     themeToggleBtn.addEventListener('click', () => {
         // Toggle the theme: if body has dark-theme, switch to light; otherwise, switch to dark
         const currentThemeIsDark = body.classList.contains('dark-theme');
