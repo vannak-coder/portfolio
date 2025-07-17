@@ -1,244 +1,432 @@
-/* Global Styles */
+/* --- Global Styles & Resets --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); /* Example: Import a nice font */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Century Gothic', sans-serif, 'Roboto';
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+    font-family: 'Poppins', sans-serif; /* Apply a custom font */
+}
+
+html {
+    scroll-behavior: smooth; /* Enables native smooth scrolling for anchor links */
 }
 
 body {
-    background-color: #1f1f1f;
+    line-height: 1.6;
+    background-color: #f4f7f6; /* Light background */
+    color: #333;
 }
 
-/* Navbar */
+.container-fluid {
+    width: 100%;
+    max-width: 1200px; /* Limit content width on very large screens */
+    margin: 0 auto; /* Center the container */
+    padding: 0 15px; /* Add some horizontal padding */
+}
+
+/* Common Section Heading Style */
+.section-heading {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff; /* Accent color */
+    border-radius: 2px;
+}
+
+
+/* --- Navbar Styling --- */
 #navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: sticky;
+    padding: 1.5rem 2rem;
+    background-color: #ffffff; /* White navbar background */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
+    position: sticky; /* Keeps navbar at the top when scrolling */
     top: 0;
-    padding: 15px 20px;
+    z-index: 1000; /* Ensures navbar stays on top of other content */
+    height: var(--navbar-height, 80px); /* Use CSS variable for height */
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 30px;
-    color: #ff7e00;
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+    margin: 0; /* Remove default h1 margin */
 }
 
 .logo span {
-    color: #fff;
+    color: #007bff; /* Accent color for 'LIO' */
 }
 
-#navbar ul {
-    display: flex;
+#navbar .nav-links { /* Used .nav-links class from HTML */
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display horizontally by default */
 }
 
-#navbar ul li {
-    margin-right: 20px;
+#navbar .nav-links li {
+    margin-left: 2rem; /* Spacing between nav items */
 }
 
-#navbar ul li a {
+#navbar .nav-links li a {
     text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
-#navbar ul li a:hover {
-    color: #ff7e00;
+#navbar .nav-links li a:hover {
+    color: #007bff;
 }
 
-/* Home Section */
+/* Hamburger menu button (hidden by default on large screens) */
+.nav-toggle {
+    display: none; /* Hide on desktop */
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* --- Home Section --- */
 #home {
+    min-height: 100vh; /* Make section at least full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    height: 100vh;
-    color: #fff;
-    text-align: center;
+    background-color: #e0e7f7; /* Soft background for home */
+    padding: 4rem 0; /* Add vertical padding */
 }
 
-.main {
+.home-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Arrange items horizontally by default */
     align-items: center;
     justify-content: center;
+    gap: 3rem; /* Space between image and text */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    text-align: center; /* Center text for smaller screens */
 }
 
-.pic {
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    margin-right: 30px;
+.home-content .pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Make image round */
+    object-fit: cover; /* Crop image to fit */
+    border: 5px solid #ffffff; /* White border */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
 .home-text {
-    width: 400px;
+    max-width: 600px;
 }
 
-.home-text h1 {
-    font-size: 40px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+.home-text h2 {
+    font-size: 3.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
 }
 
 .home-text h3 {
-    font-size: 45px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #ff7e00;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 1.5rem; /* Replaces <br> */
 }
 
-.home-text p {
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+.home-text .btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.home-text button {
-    font-size: 18px;
-    border-radius: 10px;
-    background-color: #ff7e00;
-    color: #fff;
-    cursor: pointer;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-.home-text button:hover {
-    background-color: #fff;
-    color: #ff7e00;
-}
-
-/* About Me Section */
+/* --- About Section --- */
 #about {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    text-align: center;
-    padding: 50px 20px;
+    padding: 6rem 0; /* Vertical padding for the section */
+    background-color: #fcfcfc;
 }
 
-.heading {
-    font-size: 35px;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.hero {
+.about-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Arrange horizontally by default */
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    gap: 3rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    text-align: center; /* Center text for smaller screens */
 }
 
 #about img {
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    margin: 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px; /* Slightly rounded corners */
+    object-fit: cover;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
 .about-text {
-    width: 100%;
     max-width: 600px;
-    margin: 20px auto;
 }
 
-.about-text h5 {
-    color: #ff7e00;
-    font-size: 25px;
-    font-weight: bold;
-    text-transform: capitalize;
-    margin-bottom: 15px;
+.about-text h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
 }
 
 .about-text p {
-    color: #fff;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: justify;
-    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.7;
 }
 
-.about-text p span {
-    color: #ff7e00;
-    font-weight: bold;
-}
 
-/* Portfolio Section */
+/* --- Portfolio Section --- */
 #portfolio {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    text-align: center;
-    padding: 50px 20px;
+    padding: 6rem 0;
+    background-color: #e0e7f7; /* Similar to home section for consistency */
 }
 
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+    display: grid; /* Use CSS Grid for a flexible gallery layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Space between grid items */
+    max-width: 1000px; /* Limit gallery width */
+    margin: 0 auto; /* Center the gallery */
 }
 
-.item {
-    flex: 1 1 calc(33.333% - 40px);
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
-
-img {
-    width: 100%;
-    height: auto;
+.gallery .item {
+    background-color: #ffffff;
     border-radius: 10px;
-}
-
-figcaption {
-    margin-top: 10px;
-    font-size: 1.2em;
-}
-/* Contact Section */
-#contact {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 50px 20px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#contact h2 {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 20px;
+.gallery .item:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.icon {
+.gallery .item h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.gallery .item img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Limit height of images */
+    object-fit: contain; /* Ensure full image is visible within its box */
+    margin-bottom: 1rem;
+}
+
+
+/* --- Contact Section --- */
+#contact {
+    padding: 6rem 0;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+#contact h3 {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.social-icons {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    gap: 2.5rem; /* Space between icons */
 }
 
-.icon i {
-    font-size: 50px;
-    margin: 0 20px;
-    color: #fff;
-    transition: color 0.3s ease;
+.social-icons a {
+    color: #007bff; /* Accent color for icons */
+    font-size: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.icon i:hover {
-    color: #ff7e00;
+.social-icons a:hover {
+    color: #0056b3; /* Darker accent on hover */
+    transform: translateY(-5px); /* Lift icon on hover */
+}
+
+
+/* --- Footer Styling --- */
+.site-footer {
+    background-color: #333;
+    color: #f4f7f6;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet styles (max-width: 800px) */
+@media screen and (max-width: 800px) {
+    /* Adjust overall padding */
+    .container-fluid {
+        padding: 0 10px;
+    }
+
+    /* Navbar adjustments */
+    #navbar {
+        flex-wrap: wrap; /* Allow logo and toggle to wrap */
+        height: auto; /* Allow height to adjust */
+        padding: 1rem;
+    }
+
+    #navbar .logo {
+        font-size: 1.6rem;
+    }
+
+    /* Hide nav links by default, show toggle button */
+    #navbar .nav-links {
+        display: none;
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Take full width */
+        background-color: #ffffff; /* Match navbar background */
+        position: absolute;
+        top: var(--navbar-height, 80px); /* Position below the adjusted navbar height */
+        left: 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+        border-top: 1px solid #eee;
+    }
+
+    #navbar .nav-links.active {
+        display: flex; /* Show the menu when 'active' class is present */
+    }
+
+    #navbar .nav-links li {
+        margin: 0; /* Remove horizontal margin */
+        text-align: center;
+    }
+
+    #navbar .nav-links li a {
+        display: block; /* Make links full-width clickable area */
+        padding: 10px 0;
+        color: #333; /* Adjust link color for dropdown */
+    }
+
+    .nav-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Section headings */
+    .section-heading {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Home and About content layout */
+    .home-content,
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .home-text h2 {
+        font-size: 2.8rem;
+    }
+
+    .home-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.6rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    /* Portfolio gallery */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Slightly smaller columns */
+        gap: 1.5rem;
+    }
+
+    /* Social icons */
+    .social-icons {
+        gap: 1.5rem;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+    }
+}
+
+/* Phone styles (max-width: 530px) */
+@media screen and (max-width: 530px) {
+    #navbar {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .section-heading {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .home-content .pic,
+    #about img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .home-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .home-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+        padding: 0 1rem;
+    }
+
+    .gallery .item h3 {
+        font-size: 1.5rem;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 1.8rem;
+    }
 }
