@@ -229,7 +229,7 @@ body.dark-theme #theme-toggle .fas.fa-sun {
 }
 
 /* Specific button styling for light/dark mode */
-.home-text .btn-outline-dark {
+/* .home-text .btn-outline-dark {
     border-color: var(--text-color-primary);
     color: var(--text-color-primary);
     transition: all 0.3s ease;
@@ -237,10 +237,10 @@ body.dark-theme #theme-toggle .fas.fa-sun {
 
 .home-text .btn-outline-dark:hover {
     background-color: var(--text-color-primary);
-    color: var(--background-color-primary); /* Text color changes on hover */
+    color: var(--background-color-primary); /* Text color changes on hover 
 }
 
-/* Dark theme specific button styling */
+/* Dark theme specific button styling 
 body.dark-theme .home-text .btn-outline-dark {
     border-color: var(--accent-color);
     color: var(--accent-color);
@@ -249,7 +249,7 @@ body.dark-theme .home-text .btn-outline-dark {
 body.dark-theme .home-text .btn-outline-dark:hover {
     background-color: var(--accent-color);
     color: var(--background-color-primary);
-}
+} */
 
 
 /* --- About Section --- */
