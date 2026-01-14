@@ -336,6 +336,16 @@ body.dark-theme .home-text .btn-outline-dark:hover {
     margin-bottom: 1rem;
 }
 
+/* Light mode (default) */
+.gallery .item img.github-logo {
+  content: url("Pics/github-mark.png");
+}
+
+/* Dark mode */
+body.dark-theme .gallery .item img.github-logo {
+  content: url("Pics/github-mark-white.png");
+}
+
 
 /* --- Contact Section --- */
 #contact {
